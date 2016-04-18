@@ -14,3 +14,5 @@ ALLOWED_HOSTS = ['*']
 
 # Set debug to False
 DEBUG = False
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
