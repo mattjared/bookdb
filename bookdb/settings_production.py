@@ -1,5 +1,5 @@
 # Inherit from standard settings file for defaults
-from hellowebapp.settings import *
+from bookdb.settings import *
 
 # Everything below will override our standard settings:
 # Parse database configuration from $DATABASE_URL
