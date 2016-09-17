@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8my75v+((6-47iq*9ig#^u%yt+-jwqr778m#8)o8@-k4f)w1!!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # Update me before launch!!
 
 ALLOWED_HOSTS = ['*']
@@ -104,13 +104,13 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 
-STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 

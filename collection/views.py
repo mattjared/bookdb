@@ -7,10 +7,15 @@ from collection.forms import BookForm
 from collection.models import Book
 
 def index(request):
-    books = Book.objects.all()
-    return render(request, 'index.html', {
-            'books': books,
-        })
+    if request.user.is_authenticated():
+        books = Book.objects.filter(user=request.user)
+        return render(request, 'index.html', {
+                'books': books,
+            })
+    else:
+        return render(request, 'index_out.html')
+
+
 
 def book_detail(request, slug):
     books = Book.objects.get(slug=slug)
@@ -53,13 +58,13 @@ def create_book(request):
         'form': form,
     })
 
-def browse_by_name(request, initial=None):
-    if initial:
-        books = Book.objects.filter(name__istartswith=initial).order_by('name')
-    else:
-        books = Book.objects.all().order_by('name')
+# def browse_by_name(request, initial=None):
+#     if initial:
+#         books = Book.objects.filter(name__istartswith=initial).order_by('name')
+#     else:
+#         books = Book.objects.all().order_by('name')
 
-    return render(request, 'search/search.html', {
-        'books': books,
-        'initial': initial,
-    })
+#     return render(request, 'search/search.html', {
+#         'books': books,
+#         'initial': initial,
+#     })

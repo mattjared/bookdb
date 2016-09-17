@@ -10,13 +10,15 @@ urlpatterns = [
     url(r'^$', views.index, name='home'),
     url(r'^about/$',TemplateView.as_view(template_name='about.html'),name='about'),
     url(r'^contact/$',TemplateView.as_view(template_name='contact.html'),name='contact'),
-    url(r'^books/$', RedirectView.as_view(pattern_name='browse', permanent=True)),
+    # url(r'^books/$', RedirectView.as_view(pattern_name='browse', permanent=True)),
     url(r'^books/(?P<slug>[-\w]+)/$', views.book_detail, name='book_detail'),
     url(r'^books/(?P<slug>[-\w]+)/edit/$', views.edit_book, name='edit_book'),
 
-    url(r'^browse/$', RedirectView.as_view(pattern_name='browse', permanent=True)),
-    url(r'^browse/name/$', views.browse_by_name, name='browse'),
-    url(r'^browse/name/(?P<initial>[-\w]+)/$', views.browse_by_name, name='browse_by_name'),
+    url(r'^create_book/$', views.create_book, name='create_book'),
+
+    # url(r'^browse/$', RedirectView.as_view(pattern_name='browse', permanent=True)),
+    # url(r'^browse/name/$', views.browse_by_name, name='browse'),
+    # url(r'^browse/name/(?P<initial>[-\w]+)/$', views.browse_by_name, name='browse_by_name'),
 
     url(r'^accounts/password/reset/$', password_reset, {'template_name': 'registration/password_reset_form.html'}, name="password_reset"),
     url(r'^accounts/password/reset/done/$', password_reset_done, {'template_name': 'registration/password_reset_done.html'}, name="password_reset_done"),
