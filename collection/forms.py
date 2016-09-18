@@ -4,5 +4,5 @@ from collection.models import Book
 class BookForm(ModelForm):
     class Meta:
         model = Book
-        fields = ('name', 'description',)
+        fields = ('name', 'description', 'startedOn', 'finishedOn', 'rating', 'author')
 

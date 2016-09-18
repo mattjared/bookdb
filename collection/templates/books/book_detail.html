@@ -6,9 +6,13 @@
 {% endblock title %}
 
 {% block content %}
-    <h2>{{books.name}}</h2>
+    <h2>{{ books.name }}</h2>
     <p>{{ books.description }}</p>
-    {% if user == thing.user %}
+    <p>{{ books.rating }}</p>
+    <p>{{ books.startedOn }}</p>
+    <p>{{ books.finishedOn }}</p>
+    <p>{{ books.author }}</p>
+    {% if user == books.user %}
       <a href="{% url 'edit_book' slug=books.slug %}">Edit</a>
     {% endif %}
 {% endblock content %}

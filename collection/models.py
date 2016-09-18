@@ -8,3 +8,7 @@ class Book(models.Model):
     description = models.TextField()
     slug = models.SlugField(unique=True)
     user = models.ForeignKey(User, blank=True, null=True)
+    startedOn = models.DateField(blank=True, null=True)
+    finishedOn = models.DateField(blank=True, null=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+    author = models.TextField(default="Author Authorson")
