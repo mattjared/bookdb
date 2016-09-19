@@ -1,0 +1,12 @@
+@import '_normalize';
+@import '_vars.scss';
+
+body {
+  font-family: $font-family;
+  background-color: lightGrey;
+}
+
+section {
+  width: 50%;
+  margin: 0 auto;
+}
